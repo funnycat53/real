@@ -27,6 +27,21 @@ skaitlu_pari = [[2,5], [4,7], [3,4], [7,9]]
 
 print("------------------------------------------------")
 
+def zvaigznites1(skaits):
+    for rindasNr in range(1, skaits+1):
+        for zvaigzne in range(rindasNr):
+            print("*", end="")
+        print("")
+
+def zvaigznites2(skaits):
+    for rindasNr in range(1, skaits+1):
+        print("*"*rindasNr)
+
+
+zvaigznites1(7)
+
+print("------------------------------------------------")
+
 for i in range(len(skaitlu_pari)):
     print("skaititajs:", i, "pirmais skaitlis:", skaitlu_pari[i][0],"otrais skaitlis:", skaitlu_pari[i][1], "rezultāts:", rezultats(skaitlu_pari[i][0], skaitlu_pari[i][1]))
 
