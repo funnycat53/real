@@ -77,18 +77,53 @@ for i in range(1, 11):
     print("Previous number:", prev_number, "Current number:", i, "Sum:", curr_number)
     prev_number = i
 
+print("---------------------------------------------")
 
-print("------------------------------------------------")
+def same_list(lst):
+    if lst[0] == lst[-1]:
+        return True
+    else:
+        return False
+
+numbers_1 = [1, 2, 3, 4, 5, 1]
+
+print("Given list:", numbers_1, "result is", same_list(numbers_1))
+
+numbers_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+print("Given list:", numbers_2, "result is", same_list(numbers_2))
+
+print("---------------------------------------------")
 
 
-def stars(count):
-    for line in range(1, count-1):
-        for star in range(line):
-            print("*", end="")
-        print("")
+def print_divisible_by_five(lst):
+    for num in lst:
+        if num % 5 == 0:
+            print(num)
 
-def stars2(count):
-    for line in range(1, count-1):
-        print("*"*count)
+my_list = [10, 15, 20, 25, 30, 89, 93, 34]
+print_divisible_by_five(my_list)
 
-stars(7)
+print("---------------------------------------------")
+
+
+def create_new_list(list1, list2):
+    new_list = []
+
+    for num in list1:
+        if num % 2 != 0:
+            new_list.append(num)
+
+    for num in list2:
+        if num % 2 == 0:
+            new_list.append(num)
+
+    return new_list
+
+list1 = [1, 3, 5, 7, 9]
+list2 = [2, 4, 6, 8, 10]
+result = create_new_list(list1, list2)
+print(result)
+
+
+
