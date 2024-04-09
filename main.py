@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-from dati import dabut_rindinas
+from flask import Flask, render_template, request
+from dati import dabut_rindinas, pierakstit_klat
 
 app = Flask(__name__)
 
@@ -25,6 +25,15 @@ def saraksts():
 
     return render_template("saraksts.html", vardi = saraksts, bildes = bildes, garums = len(saraksts), visi = kopejais_saraksts)
 
+@app.route("/info", methods=["POST", "GET"])
+def info():
+     if request.method == "POST":
+        rinda = ""
+        nosaukums = request.form["nosaukums"]
+        adrese = request.form["adrese"]
+        rinda = nosaukums + ", " + adrese
+        pierakstit_klat(rinda)
+     return render_template("info.html")
 
 if __name__ == "__main__":
         app.run(port = 5000)
